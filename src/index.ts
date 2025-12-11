@@ -1,17 +1,22 @@
 import express from 'express'
+import { getContributors, getContributorByUsername } from './contributors.js'
 
 const app = express()
 
 app.get('/', (_req, res) => {
-  res.send('Hello Express!')
+  res.send('Hello! Welcome to iContribute.ts!')
 })
 
-app.get('/api/users/:id', (_req, res) => {
-  res.json({ id: _req.params.id })
+app.get('/api/contributors', async (_req, res) => {
+  const contributors = await getContributors()
+  res.json(contributors)
 })
 
-app.get('/api/posts/:postId/comments/:commentId', (_req, res) => {
-  res.json({ postId: _req.params.postId, commentId: _req.params.commentId })
+app.get('/api/contributors/:username', async (_req, res) => {
+  const username = _req.params.username
+  console.log('Fetching contributor for username:', username)
+  const contributor = await getContributorByUsername(username)
+  res.json(contributor)
 })
 
 export default app

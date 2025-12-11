@@ -1,6 +1,10 @@
 {
   "name": "api.express",
   "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "collect:contributors": "npm run build && node ./dist/git.js"
+  },
   "dependencies": {
     "express": "5.1.0"
   },

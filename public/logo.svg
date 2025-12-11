@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  iContribute.ts logo – marine blue -->
+<svg width="400" height="200"
+  viewBox="0 0 400 200"
+  xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Drop‑shadow for the circle (optional) -->
+  <defs>
+    <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" />
+      <feOffset dx="2" dy="2" result="offsetblur" />
+      <feFlood flood-color="#00000033" />
+      <feComposite in2="offsetblur" operator="in" />
+      <feMerge>
+        <feMergeNode />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Circular background -->
+  <circle cx="200" cy="100" r="90"
+    fill="#006994"
+    filter="url(#dropShadow)" />
+
+  <!-- Project name text -->
+  <text x="50%" y="55%"
+    font-family="Pacifico, JetBrains Mono, Helvetica, Arial, sans-serif"
+    font-style="italic"
+    font-size="48"
+    font-weight="600"
+    fill="#FFFFFF"
+    text-anchor="middle">
+    iContribute.ts </text>
+</svg>

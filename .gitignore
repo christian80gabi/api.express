@@ -27,3 +27,14 @@ lerna-debug.log*
 # misc
 .DS_Store
 .vercel
+
+# build
+dist/
+build/
+out/
+.env*.local
+
+# contributors
+contributors/*
+!contributors/.gitkeep
+contributors/contributors.json
