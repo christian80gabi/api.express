@@ -3,14 +3,17 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "collect:contributors": "npm run build && node ./dist/git.js"
+    "collect:contributors": "npm run build && node ./dist/git.js",
+    "dev": "npm run collect:contributors && npx tsx --watch src/index.ts",
+    "start": "collect:contributors && npx tsx src/index.ts"
   },
   "dependencies": {
     "express": "5.1.0"
   },
   "devDependencies": {
-    "@types/node": "20.11.17",
     "@types/express": "5.0.0",
+    "@types/node": "20.11.17",
+    "tsx": "^4.21.0",
     "typescript": "5.8.3"
   }
 }

@@ -19,4 +19,8 @@ app.get('/api/contributors/:username', async (_req, res) => {
   res.json(contributor)
 })
 
+app.listen(3000, () => {
+	console.log(`Server is running at http://localhost:3000`);
+});
+
 export default app
