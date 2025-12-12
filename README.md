@@ -2,12 +2,24 @@
   <img src="./public/logo.svg" alt="log">
 </div>
 
-# iContribute.ts
-*A tiny **Express + TypeScript** server that returns the list of people who have contributed to this repository.*
+---
 
-> ⚡️ **Why?**  
-> A quick, self‑documenting endpoint that anyone can call to see *who* made the project possible – no external services required.
+```
+    ____                    __               __               __             
+ __/\  _`\                 /\ \__         __/\ \             /\ \__          
+/\_\ \ \/\_\    ___     ___\ \ ,_\  _ __ /\_\ \ \____  __  __\ \ ,_\    __   
+\/\ \ \ \/_/_  / __`\ /' _ `\ \ \/ /\`'__\/\ \ \ '__`\/\ \/\ \\ \ \/  /'__`\ 
+ \ \ \ \ \L\ \/\ \L\ \/\ \/\ \ \ \_\ \ \/ \ \ \ \ \L\ \ \ \_\ \\ \ \_/\  __/ 
+  \ \_\ \____/\ \____/\ \_\ \_\ \__\\ \_\  \ \_\ \_,__/\ \____/ \ \__\ \____\
+   \/_/\/___/  \/___/  \/_/\/_/\/__/ \/_/   \/_/\/___/  \/___/   \/__/\/____/
+                                                                             
+   
+> iContribute.ts
+A tiny Express + TypeScript server that returns the list of people who have contributed to this repository.
 
+> ⚡️ Why?
+A quick, self‑documenting endpoint that anyone can call to see *who* made the project possible – no external services required.                                                                          
+```
 ---
 
 ## 🚀 Quick start
@@ -39,7 +51,9 @@ curl http://localhost:3000/api/contributors
 
 ## 📖 Overview
 
-The server exposes a single endpoint:
+The server exposes two endpoints:
+
+### [ 1 ] Contributor List
 
 ```
 GET /api/contributors
@@ -53,6 +67,7 @@ Response format (JSON array):
     "name": "Jane Doe",
     "email": "jane@example.com",
     "avatar": "https://github.com/janedoe.png",
+    "username": "janedoe",
     "role": "Maintainer"
   },
   ...
@@ -76,6 +91,33 @@ Example:
 
 When you push, the API will pick up the new entry automatically.
 
+
+### [ 2 ] Information of a specific contributor
+
+
+```http
+GET /api/contributors/:username
+```
+
+Example: 
+
+```
+GET /api/contributors/janedoe
+```
+
+Response format (JSON array):
+
+```json
+[
+  {
+    "name": "Jane Doe",
+    "email": "jane@example.com",
+    "avatar": "https://github.com/janedoe.png",
+    "username": "janedoe",
+    "role": "Contributor"
+  }
+]
+```
 ---
 
 ## 📦 Installation
