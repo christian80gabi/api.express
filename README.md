@@ -53,7 +53,7 @@ curl http://localhost:3000/api/contributors
 
 The server exposes two endpoints:
 
-### [ 1 ] Contributor List
+### Contributor List
 
 ```
 GET /api/contributors
@@ -70,7 +70,6 @@ Response format (JSON array):
     "username": "janedoe",
     "role": "Maintainer"
   },
-  ...
 ]
 ```
 
@@ -80,7 +79,6 @@ You can add your own data by creating a file under the **contributors/** folder 
 Example:
 
 ```json
-// contributors/alex.json
 {
   "name": "Alex Smith",
   "email": "alex@foo.bar",
@@ -92,7 +90,7 @@ Example:
 When you push, the API will pick up the new entry automatically.
 
 
-### [ 2 ] Information of a specific contributor
+### Information of a specific contributor
 
 
 ```http
